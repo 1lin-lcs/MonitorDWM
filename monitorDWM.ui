@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>monitorDWMClass</class>
+ <widget class="QWidget" name="monitorDWMClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1345</width>
+    <height>861</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>monitorDWM</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0" colspan="2">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="2" column="6">
+      <widget class="QPushButton" name="StopButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>停止监视</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="6">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="7" column="3">
+      <widget class="QLabel" name="ProPIDLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>进程PID：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="MonitorStateLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>监视状态：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="4">
+      <widget class="QLabel" name="PPIDLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1" colspan="2">
+      <widget class="QLabel" name="PNameLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="ProNameLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>进程名称：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="6">
+      <widget class="QPushButton" name="StartButton">
+       <property name="text">
+        <string>开始监视</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="6">
+      <widget class="QLabel" name="NowLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="5">
+      <widget class="QLabel" name="Tex_NowLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>当前占用值：</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QPushButton" name="SettingsButton">
+       <property name="text">
+        <string>设置</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="6">
+      <widget class="QPushButton" name="HideButton">
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>隐藏</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" rowspan="7" colspan="6">
+      <widget class="QChartView" name="widget" native="true"/>
+     </item>
+     <item row="3" column="6">
+      <widget class="QPushButton" name="StopProButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>结束进程</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="StateLabel">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>关</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="6">
+      <widget class="QPushButton" name="QuitButton">
+       <property name="text">
+        <string>退出</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header>qchartview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="monitorDWM.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>HideButton</sender>
+   <signal>clicked()</signal>
+   <receiver>monitorDWMClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>721</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>801</x>
+     <y>211</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
